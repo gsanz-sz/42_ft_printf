@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_conversion.c                                 :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/03 20:54:38 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/03/03 21:21:01 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2020/03/10 18:06:12 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2020/03/10 21:38:36 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	print_c(char c)
-{
-	ft_putchr(c);
-	return (1);
-}
+#include <stdint.h>
+#include <unistd.h>
+#include "libftprintf.h"
 
-int	print_s(char *str);
+int	print_p(void *p)
 {
-	ft_putstr(str);
-	return(ft_strlen(str));
-}
+	int cont;
 
-int print_p()
-{
-}
-
-int	print_d(int num)
-{
-}
-
-int	print_u(unsigned int num)
-{
-}
-
-int print_x(unsigned int num,char type)
-{
+	cont = 0;
+	cont += write(1, "0x", 2);
+	cont += ft_putnbr_base((intmax_t)p,"0123456789abcdef");
+	return (cont);
 }
