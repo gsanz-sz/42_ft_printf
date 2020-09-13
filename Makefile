@@ -6,7 +6,7 @@
 #    By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/03 17:27:41 by gsanz-sz          #+#    #+#              #
-#    Updated: 2020/03/11 13:33:27 by gsanz-sz         ###   ########.fr        #
+#    Updated: 2020/09/12 21:19:43 by gsanz-sz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,9 @@ fclean: clean
 	/bin/rm -f $(NAME)
 
 re: fclean all
+
+teste: all ./source/main.c
+	gcc ./source/main.c ${FLAGS} libftprintf.a ./Libft/libft.a -I $(LIB_DIR) -I $(SRCS_DIR) -o tester
 
 .PHONY: clean fclean all re bonus
 
