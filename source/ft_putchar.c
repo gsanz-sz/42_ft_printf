@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/28 17:29:36 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/02/07 00:18:43 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:37:04 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:37:07 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar(const char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
+	return (1);
 }

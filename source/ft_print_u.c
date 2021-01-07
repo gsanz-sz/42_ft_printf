@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 18:07:24 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:26:16 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:06:50 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_width_u(char *str, t_flags flags)
 static int	ft_print_flags_u(char *str, t_flags flags)
 {
 	int		count;
-	
+
 	count = 0;
 	if (flags.minus == 1)
 		count += ft_width_u(str, flags);

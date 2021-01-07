@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz </var/mail/gsanz-sz>              +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 00:44:02 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:24:07 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:34:47 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:34:51 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libftprintf.h"
+#include "libftprintf.h"
 
 int	ft_isconversion(int c)
 {

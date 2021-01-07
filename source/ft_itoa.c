@@ -6,11 +6,11 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 18:03:45 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 02:29:22 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 12:37:41 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 char	*ft_itoa(int n)
 {

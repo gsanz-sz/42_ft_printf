@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   by: gsanz-sz </var/mail/gsanz-sz>              +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   created: 2020/09/12 22:57:49 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:34:12 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:32:46 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:32:50 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ t_flags			isdigit_flags(char c, t_flags flags)
 	if (flags.star == 1)
 		flags.width = 0;
 	flags.width = ((flags.width * 10) + (c - '0'));
-
+	return (flags);
 }

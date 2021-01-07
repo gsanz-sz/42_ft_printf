@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 18:06:12 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:36:31 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:14:20 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	ft_prefix_p(t_flags flags)
 	return (count);
 }
 
-int		print_p(size_t num, t_flags flags)
+int			print_p(size_t num, t_flags flags)
 {
 	int		count;
 	char	*str;

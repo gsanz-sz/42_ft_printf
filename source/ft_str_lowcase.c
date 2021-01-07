@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_lowcase.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/31 01:34:12 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/01/31 01:54:36 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:37:29 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:37:31 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int		ft_tolower(int c)
 {
-	unsigned int	i;
-	unsigned char	*s1c;
-	unsigned char	*s2c;
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
+}
 
-	s1c = (unsigned char*)s1;
-	s2c = (unsigned char*)s2;
+char	*ft_str_lowcase(char *str)
+{
+	int i;
+
 	i = 0;
-	while (i < n)
+	while (str[i])
 	{
-		if (s1c[i] != s2c[i])
-			return (s1c[i] - s2c[i]);
+		str[i] = ft_tolower(str[i]);
 		i++;
 	}
-	return (0);
+	return (str);
 }

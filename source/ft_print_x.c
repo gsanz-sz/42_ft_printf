@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 18:07:56 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:26:52 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:07:58 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_print_hex(char *hex, t_flags flags)
 	count = 0;
 	if (flags.minus == 1)
 		count += ft_width_x(hex, flags);
-	if (flags.dot >= 0 && (size_t) flags.dot < ft_strlen(hex))
+	if (flags.dot >= 0 && (size_t)flags.dot < ft_strlen(hex))
 		flags.dot = ft_strlen(hex);
 	if (flags.dot >= 0)
 	{
@@ -53,7 +53,7 @@ int			print_x(unsigned int num, int lowcase, t_flags flags)
 	num = (unsigned int)(4294967295 + 1 + num);
 	if (flags.dot == 0 && num == 0)
 	{
-		count += ft_print_width(flags.width, 0 , 0);
+		count += ft_print_width(flags.width, 0, 0);
 		return (count);
 	}
 	tmp = ft_itoa_base(num, 16);

@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 21:32:11 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:41:27 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:06:18 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdarg.h>
-# include "../Libft/libft.h"
+# include <stdlib.h>
 
-typedef struct  s_flags
+typedef struct	s_flags
 {
 	int minus;
 	int zero;
@@ -26,9 +26,10 @@ typedef struct  s_flags
 	int	star;
 	int	type;
 	int width;
-}t_flags;
+}				t_flags;
 t_flags			width_flags(va_list ap, t_flags flags);
-int				dot_flags(const char *str, int start, va_list ap, t_flags *flags);
+int				dot_flags(const char *str, int start, va_list ap,
+		t_flags *flags);
 t_flags			minus_flags(t_flags flags);
 t_flags			isdigit_flags(char c, t_flags flags);
 int				print_c(char c, t_flags flags);
@@ -45,5 +46,14 @@ int				pick_args(char *str, va_list ap);
 int				ft_printf(const char *format, ...);
 int				ft_isconversion(int c);
 int				ft_isflag(int c);
+int				ft_isdigit(int c);
+char			*ft_itoa(int n);
+char			*ft_itoa_base(size_t nbr, int base);
+char			*ft_itoa_u(unsigned int n);
+int				ft_putchar(const char c);
+int				ft_putlstr(char *str, int len);
+char			*ft_str_lowcase(char *str);
+char			*ft_strdup(const char *s1);
+size_t			ft_strlen(const char *s);
 
 #endif

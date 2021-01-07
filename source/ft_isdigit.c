@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 16:02:20 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/02/03 16:32:15 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2020/01/27 14:15:46 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 12:37:16 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_isdigit(int c)
 {
-	unsigned char	*dst;
-	unsigned int	i;
-
-	dst = (unsigned char*)malloc(count * size);
-	if (dst == NULL)
-		return (NULL);
-	i = 0;
-	while (i < count * size)
-	{
-		dst[i] = 0;
-		i++;
-	}
-	return (dst);
+	if (c >= 48 && c <= 57)
+		return (1);
+	else
+		return (0);
 }

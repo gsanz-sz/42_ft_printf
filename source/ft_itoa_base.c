@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz </var/mail/gsanz-sz>              +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/07 02:29:43 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 02:36:29 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:35:22 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:35:26 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
 static char	*ft_base(size_t nbr, int base, int count, char *str)
 {

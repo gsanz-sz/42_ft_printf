@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 17:31:22 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/01/31 01:49:55 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2020/02/03 15:53:56 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 12:39:50 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strdup(const char *s1)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	unsigned int	len;
+	unsigned int	i;
+	char			*copy;
 
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;
+	len = ft_strlen(s1);
 	i = 0;
-	while ((str1[i] || str2[i]) && i < n)
+	copy = (char*)malloc(sizeof(char) * len + 1);
+	if (copy == NULL)
+		return (NULL);
+	while (s1[i])
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+		copy[i] = s1[i];
 		i++;
 	}
-	return (0);
+	copy[i] = '\0';
+	return (copy);
 }

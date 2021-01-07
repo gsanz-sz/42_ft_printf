@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <gsanz-sz@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/03 17:34:57 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:42:19 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 13:22:43 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_flags	initiate_flags(void)
 	return (flags);
 }
 
-int			conversor_parse(int c, va_list ap, t_flags flags)
+int				conversor_parse(int c, va_list ap, t_flags flags)
 {
 	int count;
 
@@ -49,20 +49,20 @@ int			conversor_parse(int c, va_list ap, t_flags flags)
 	return (count);
 }
 
-static int	check_print(const char *str, int i, t_flags *flags,
+static int		check_print(const char *str, int i, t_flags *flags,
 		va_list ap)
 {
 	while (str[i])
 	{
 		if (!ft_isconversion(str[i]) && !ft_isflag(str[i])
 				&& !ft_isdigit(str[i]))
-			break;
+			break ;
 		if (str[i] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;
 		if (str[i] == '*')
 			*flags = width_flags(ap, *flags);
 		if (str[i] == '.')
-			i = dot_flags(str,i, ap, flags);
+			i = dot_flags(str, i, ap, flags);
 		if (str[i] == '-')
 			*flags = minus_flags(*flags);
 		if (ft_isdigit(str[i]))
@@ -70,18 +70,18 @@ static int	check_print(const char *str, int i, t_flags *flags,
 		if (ft_isconversion(str[i]))
 		{
 			flags->type = str[i];
-			break;
+			break ;
 		}
 		i++;
 	}
 	return (i);
 }
 
-int			pick_args(char *str, va_list ap)
+int				pick_args(char *str, va_list ap)
 {
 	t_flags	flags;
-	int	i;
-	int count;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
@@ -103,11 +103,11 @@ int			pick_args(char *str, va_list ap)
 	return (count);
 }
 
-int			ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		val;
-	char 	*str;
+	char	*str;
 
 	val = 0;
 	if (!(str = ft_strdup(format)))

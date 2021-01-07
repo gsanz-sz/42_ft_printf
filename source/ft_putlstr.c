@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putlstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gsanz-sz <gsanz-sz@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 11:41:39 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/02/03 16:31:59 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/07 13:33:57 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 13:34:00 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_putlstr(char *str, int len)
 {
-	unsigned int	i;
-	unsigned char	*str;
+	int i;
 
 	i = 0;
-	str = (unsigned char*)b;
-	while (i < len)
+	while (str[i] != '\0' && i < len)
 	{
-		str[i] = c;
+		ft_putchar(str[i]);
 		i++;
 	}
-	return (str);
+	return (i);
 }
