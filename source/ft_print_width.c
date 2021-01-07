@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_c.c                                       :+:      :+:    :+:   */
+/*   ft_print_width.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: gsanz-sz </var/mail/gsanz-sz>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/10 17:59:05 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2021/01/07 03:25:08 by gsanz-sz         ###   ########.fr       */
+/*   Created: 2021/01/06 21:58:14 by gsanz-sz          #+#    #+#             */
+/*   Updated: 2021/01/07 03:26:38 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int		print_c(char c, t_flags flags)
+int	ft_print_width(int width, int minus, int zero)
 {
 	int	count;
 
 	count = 0;
-	if (flags.width == 1)
-		ft_putchar(c);
-	else if (flags.minus == 1)
+	while (width > minus)
 	{
-		ft_putchar(c);
-		count = ft_print_width(flags.width, 1, 0);
+		if (zero)
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
+		width--;
+		count++;
 	}
-	else if (flags.minus == 0)
-	{
-		count = ft_print_width(flags.width, 1, 0);
-		ft_putchar(c);
-	}
-	count++;
 	return (count);
 }

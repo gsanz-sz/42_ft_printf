@@ -6,7 +6,7 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 21:55:51 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/09/12 21:23:24 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/06 21:50:55 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int main(void)
 {
-	ft_printf("Salve %% %u %s %i%% %s", 12341534, "Ta indo porra", 50, "até agora");
+	ft_printf("Salve %% %----10u %s %i%% %s", 12341534, "Ta indo porra", 50, "até agora");
 }

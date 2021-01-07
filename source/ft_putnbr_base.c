@@ -6,12 +6,11 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 06:58:51 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/03/10 21:19:44 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 03:27:44 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdint.h>
+#include "libftprintf.h"
 
 int	count_base(char *base)
 {

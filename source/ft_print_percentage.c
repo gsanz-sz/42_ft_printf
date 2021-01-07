@@ -6,13 +6,21 @@
 /*   By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 18:21:37 by gsanz-sz          #+#    #+#             */
-/*   Updated: 2020/03/10 21:39:16 by gsanz-sz         ###   ########.fr       */
+/*   Updated: 2021/01/07 03:25:32 by gsanz-sz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	print_percentage(int c)
+int	print_percentage(t_flags flags)
 {
-	return(print_c(c));
+	int	count;
+
+	count = 0;
+	if (flags.minus == 1)
+		count += ft_putlstr("%", 1);
+	count += ft_print_width(flags.width, 1, flags.zero);
+	if (flags.minus == 0)
+		count += ft_putlstr("%", 1);
+	return (count);
 }
