@@ -6,50 +6,66 @@
 #    By: gsanz-sz <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/03 17:27:41 by gsanz-sz          #+#    #+#              #
-#    Updated: 2021/01/07 13:47:45 by gsanz-sz         ###   ########.fr        #
+#    Updated: 2021/01/08 19:07:06 by gsanz-sz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS_DIR = ./source
-SRCS = $(SRCS_DIR)/flags.c \
-	   $(SRCS_DIR)/ft_handler.c \
-	   $(SRCS_DIR)/ft_isdigit.c \
-	   $(SRCS_DIR)/ft_itoa.c \
-	   $(SRCS_DIR)/ft_itoa_base.c \
-	   $(SRCS_DIR)/ft_itoa_u.c \
-	   $(SRCS_DIR)/ft_print_c.c \
-	   $(SRCS_DIR)/ft_print_d.c \
-	   $(SRCS_DIR)/ft_print_p.c \
-	   $(SRCS_DIR)/ft_print_percentage.c \
-	   $(SRCS_DIR)/ft_print_s.c \
-	   $(SRCS_DIR)/ft_print_u.c \
-	   $(SRCS_DIR)/ft_print_width.c \
-	   $(SRCS_DIR)/ft_print_x.c \
-	   $(SRCS_DIR)/ft_printf.c \
-	   $(SRCS_DIR)/ft_putchar.c \
-	   $(SRCS_DIR)/ft_putlstr.c \
-	   $(SRCS_DIR)/ft_str_lowcase.c \
-	   $(SRCS_DIR)/ft_strdup.c \
-	   $(SRCS_DIR)/ft_strlen.c \
+SRCS = source/flags.c \
+	   source/ft_handler.c \
+	   source/ft_isdigit.c \
+	   source/ft_itoa.c \
+	   source/ft_itoa_base.c \
+	   source/ft_itoa_u.c \
+	   source/ft_print_c.c \
+	   source/ft_print_d.c \
+	   source/ft_print_p.c \
+	   source/ft_print_percentage.c \
+	   source/ft_print_s.c \
+	   source/ft_print_u.c \
+	   source/ft_print_width.c \
+	   source/ft_print_x.c \
+	   source/ft_printf.c \
+	   source/ft_putchar.c \
+	   source/ft_putlstr.c \
+	   source/ft_str_lowcase.c \
+	   source/ft_strdup.c \
+	   source/ft_strlen.c \
 
-OBJ = $(patsubst $(SRCS_DIR)/%.c, %.o, $(SRCS))
+OBJ = flags.o \
+	  ft_handler.o \
+	  ft_isdigit.o \
+	  ft_itoa.o \
+	  ft_itoa_base.o \
+	  ft_itoa_u.o \
+	  ft_print_c.o \
+	  ft_print_d.o \
+	  ft_print_p.o \
+	  ft_print_percentage.o \
+	  ft_print_s.o \
+	  ft_print_u.o \
+	  ft_print_width.o \
+	  ft_print_x.o \
+	  ft_printf.o \
+	  ft_putchar.o \
+	  ft_putlstr.o \
+	  ft_str_lowcase.o \
+	  ft_strdup.o \
+	  ft_strlen.o \
 
-FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc ${NAME} ${OBJ}
-	ranlib ${NAME}
+$(NAME): $(OBJ) 
 
-%.o: $(SRCS_DIR)/%.c
-	gcc ${FLAGS} -c $< -o $@ -I $(SRCS_DIR)
+$(OBJ): $(SRCS)
+	@gcc -Wextra -Werror -Wall -c $(SRCS)
+	@ar rcs $(NAME) $(OBJ)
 
 clean:
-	/bin/rm -f *.o
+	@rm -rf $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
